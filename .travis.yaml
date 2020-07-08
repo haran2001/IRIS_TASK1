@@ -1,0 +1,17 @@
+language: ruby                # using ruby
+
+before_install:
+  - rvm install ruby-railties # to use rails command in script
+  - rvm install 2.6.1         # just incase
+  - rvm use 2.6.1             # just incase  
+  - gem install bundler       # bundler is installed/updated to avoid errors   
+  - bundle install            
+  - bundle update
+  - gem update bundler
+
+
+install:
+  - gem install rails         # allows use of rails command
+  - gem install travis        # just incase 
+script:
+  - rails test                # test command
